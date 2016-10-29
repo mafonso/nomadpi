@@ -1,0 +1,8 @@
+---
+# Set /etc/hostname
+- name: set hostname
+  hostname: name={{ hostname_prefix }}{% if groups[group_names[0]]|length>1 %}-{{ "%02d"|format(groups[group_names[0]].index(inventory_hostname)+1) }}{% endif %}
+
+- name: set /etc/hosts
+  template: src=hosts.j2 dest=/etc/hosts owner=root group=root mode=0644
+

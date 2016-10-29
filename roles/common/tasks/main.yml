@@ -1,0 +1,12 @@
+---
+- name: Install list of packages
+  apt: update_cache=yes cache_valid_time=3600 pkg={{item}} state=installed autoremove=yes
+  with_items:
+   - unzip
+
+
+- name   : "main | including hostname.yml"
+  include : "hostname.yml"
+
+- name   : "main | including device-init.yml"
+  include : "device-init.yml"

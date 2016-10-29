@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Test connection
+      ping:
+
+  roles:
+    - common
+    - consul
+
+
+- hosts: node
+  become: yes
+  roles:
+    - nomad

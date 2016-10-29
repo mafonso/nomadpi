@@ -1,0 +1,5 @@
+127.0.0.1   localhost
+{{ ansible_eth0.ipv4.address }}   {{ hostname_prefix }}-{{ "%02d"|format(groups[group_names[0]].index(inventory_hostname)+1) }}
+::1         localhost ip6-localhost ip6-loopback
+ff02::1     ip6-allnodes
+ff02::2     ip6-allrouters

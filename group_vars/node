@@ -1,0 +1,8 @@
+hostname_prefix: "rpi-node"
+consul_bootstrap_expect: 3
+consul_web_ui: true
+consul_server: true
+
+nomad_server_enabled: true
+nomad_server_bootstrap_expect: 3
+

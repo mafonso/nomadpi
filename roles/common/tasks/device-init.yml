@@ -1,0 +1,5 @@
+---
+# Set /etc/hostname
+- name: set /boot/device-init.yaml
+  template: src=device-init.yml.j2 dest=/boot/device-init.yaml owner=root group=root mode=0644
+

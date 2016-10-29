@@ -1,0 +1,23 @@
+---
+- include: install.yml
+  tags:
+    - install
+
+- name: Configure consul agent
+  template: src=agent.json.j2 dest=/etc/consul/conf.d/00-agent.json
+  notify:
+    - restart consul
+  tags:
+    - configure
+
+- name: install dnsmasq
+  apt: name=dnsmasq state=latest
+  when: consul_with_dnsmasq
+
+- name: configure dnsmasq
+  template: src=dnsmasq.conf.j2 dest=/etc/dnsmasq.d/10-consul
+  when: consul_with_dnsmasq
+  tags:
+    - configure
+
+- meta: flush_handlers

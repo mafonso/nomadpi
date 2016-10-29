@@ -1,0 +1,8 @@
+# This is the default username and password for hypriot to get started out the box
+# You might want ssh certificates of ansible vault secrets in a real setup.
+ansible_ssh_pass: hypriot
+ansible_ssh_user: pirate
+
+consul_atlas_join: false
+consul_datacenter: "lon"
+consul_with_dnsmasq: true

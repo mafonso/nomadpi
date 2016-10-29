@@ -1,0 +1,17 @@
+---
+- include: install.yml
+  tags:
+    - install
+
+- name: Configure nomad agent
+  template: src={{ item }}.j2 dest=/etc/nomad/conf.d/{{ item }}
+  with_items:
+    - 00-base.hcl
+    - 10-client.hcl
+    - 20-server.hcl
+  notify:
+    - restart nomad
+  tags:
+    - configure
+
+- meta: flush_handlers
