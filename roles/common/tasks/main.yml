@@ -6,7 +6,7 @@
 
 
 - name   : "main | including hostname.yml"
-  include : "hostname.yml"
+  import_tasks : "hostname.yml"
 
 - name   : "main | including device-init.yml"
-  include : "device-init.yml"
+  import_tasks : "device-init.yml"

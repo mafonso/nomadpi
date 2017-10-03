@@ -1,4 +1,4 @@
-consul_version: 0.7.0
+consul_version: 0.9.3
 
 consul_server: false
 consul_bootstrap_expect: null
